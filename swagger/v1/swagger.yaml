@@ -1,0 +1,135 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/products":
+    get:
+      summary: Retrieves all products
+      tags:
+      - Products
+      responses:
+        '200':
+          description: product found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  title:
+                    type: string
+                  product_type:
+                    type: string
+                  description:
+                    type: string
+                  filename:
+                    type: string
+                  height:
+                    type: integer
+                  width:
+                    type: integer
+                  price:
+                    type: float
+                  rating:
+                    type: integer
+                required:
+                - id
+    post:
+      summary: Creates a product
+      tags:
+      - Products
+      parameters: []
+      responses:
+        '201':
+          description: product created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                product_type:
+                  type: string
+                description:
+                  type: string
+                filename:
+                  type: string
+                height:
+                  type: integer
+                width:
+                  type: integer
+                price:
+                  type: float
+                rating:
+                  type: integer
+              required:
+              - title
+              - product_type
+  "/products/{id}":
+    get:
+      summary: Retrieves a product
+      tags:
+      - Products
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: product found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  title:
+                    type: string
+                  product_type:
+                    type: string
+                  description:
+                    type: string
+                  filename:
+                    type: string
+                  height:
+                    type: integer
+                  width:
+                    type: integer
+                  price:
+                    type: float
+                  rating:
+                    type: integer
+                required:
+                - id
+        '404':
+          description: product not found
+        '406':
+          description: unsupported accept header
+    delete:
+      summary: Delete a product
+      tags:
+      - Products
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Product deleted
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
