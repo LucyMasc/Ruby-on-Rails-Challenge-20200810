@@ -23,3 +23,7 @@ end
 puts "#{Product.count} products created!"
 # .delete("\u0000") due to rails aborted!
 # ArgumentError: string contains null byte
+
+3.times do
+  ApiKey.create!
+end
