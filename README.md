@@ -1,10 +1,9 @@
 # Ruby-on-Rails-Challenge-20200810
 ## Back-End
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+REST API built using Ruby on Rails and MySQL with restrict access through Api-Key.
 
-Things you may want to cover:
+You can test it out on https://maino-api-challenge.herokuapp.com/products
 
 * Ruby version
 
