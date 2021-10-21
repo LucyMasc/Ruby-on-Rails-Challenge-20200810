@@ -3,7 +3,9 @@
 
 REST API built using Ruby on Rails and MySQL with restrict access through Api-Key.
 
-You can test it out on https://maino-api-challenge.herokuapp.com/products
+You can test it out on https://rapi-cdsh.herokuapp.com/
+
+Oops! Access Denied! 
 
 * Ruby version
 
