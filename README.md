@@ -3,24 +3,19 @@
 
 REST API built using Ruby on Rails and MySQL with restrict access through Api-Key.
 
-You can test it out on https://rapi-cdsh.herokuapp.com/
+You can test it out on https://rapi-cdsh.herokuapp.com/products
 
 Oops! Access Denied! 
 
-* Ruby version
+On your CLI paste the following command:
 
-* System dependencies
+  <pre><code>
+    url = %x{ curl https://rapi-cdsh.herokuapp.com/products -H 'Authorization: Token token="6c712a48042f610461391ea05fee18f7"' }
+    JSON.parse(url) 
+  </code></pre>
 
-* Configuration
+  and there we go, you can visualize all products.
+  
+  But hurry up! This api key must expire soon.
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
